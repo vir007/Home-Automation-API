@@ -18,5 +18,5 @@ class HomeList(generics.ListCreateAPIView):
 class HomeDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Home.objects.all()
     serializer_class = HomeSerializer
-    # permission_classes = (IsAdminOrReadOnly,)
+    permission_classes = (IsAdminOrReadOnly,)
     lookup_url_kwarg = 'home_id'
