@@ -1,24 +1,19 @@
 ### Home Automation using Python/Django 
 
-## Building
+## Getting Started
 
-It is best to use the python `venv` tool to build locally:
+Setup project environment with venv and pip.
 
 ```sh
 $ python -m venv venv
 $ venv/Scripts/activate
+$ pip install -r requirements.txt
+$ python manage.py migrate
+$ python manage.py runserver
 ```
 
-## requirements.txt
+## Libraries
 
-Install libraries using pip.
-Use freeze command to automatically generate a list of requirements.
-
-```
-$ pip install django,djangorestframework,psycopg2,pytest,pytest-django
-$ pip list
-$ pip freeze > requirements.txt 
-```
 requirements.txt should have the following lines:
 
 ```
@@ -40,3 +35,5 @@ pytz==2021.1
 sqlparse==0.4.1
 toml==0.10.2
 ```
+
+## 
