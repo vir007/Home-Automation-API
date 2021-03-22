@@ -1,5 +1,20 @@
 from rest_framework import serializers
-from home.models import Home,Room,Lights,Log_thermostat,Log_lights,Log_room_temp
+from home.models import Home, Room, Lights, Log_thermostat, Log_lights, Log_room_temp
+
+class LogThermostatSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Log_thermostat
+        fields = ['home', 'oldVal', 'newVal', 'created_on']
+
+class LogRoomTempSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Log_room_temp
+        fields = ['room', 'oldVal', 'newVal', 'created_on']
+
+class LogLightsSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Log_lights
+        fields = [ 'lights', 'oldVal', 'newVal','created_on']
 
 # Lights Serializer
 class LightsSerializer(serializers.ModelSerializer):

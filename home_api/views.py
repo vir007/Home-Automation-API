@@ -1,7 +1,7 @@
 from rest_framework import generics
 from .permissions import IsAdminOrReadOnly
-from home.models import Home,Room,Lights
-from .serializers import HomeSerializer,RoomSerializer,LightsSerializer
+from home.models import Home, Room, Lights, Log_lights, Log_room_temp,Log_thermostat
+from .serializers import HomeSerializer,RoomSerializer,LightsSerializer,LogLightsSerializer,LogThermostatSerializer,LogRoomTempSerializer
 
 # GET   : Retrive All Home Objects --Permission: Anyone
 # POST  : Create new Home Object --Permission: OnlyAdmin
@@ -24,7 +24,7 @@ class HomeDetail(generics.RetrieveUpdateDestroyAPIView):
 # GET   : Retrive All Room Objects --Permission: Anyone
 # POST  : Create a new Room Object --Permission: OnlyAdmin
 class RoomList(generics.ListCreateAPIView):
-    queryset = Room.objects.all() #Post.postobjects.all()
+    queryset = Room.objects.all() 
     serializer_class = RoomSerializer
     permission_classes = (IsAdminOrReadOnly,)
     lookup_url_kwarg = 'room_id'
@@ -42,7 +42,7 @@ class RoomDetail(generics.RetrieveUpdateDestroyAPIView):
 # GET   : Retrive All Lights Objects --Permission: Anyone
 # POST  : Create a new Lights Object --Permission: OnlyAdmin
 class LightsList(generics.ListCreateAPIView):
-    queryset = Lights.objects.all() #Post.postobjects.all()
+    queryset = Lights.objects.all() 
     serializer_class = LightsSerializer
     permission_classes = (IsAdminOrReadOnly,)
     lookup_url_kwarg = 'light_id'
@@ -56,3 +56,19 @@ class LightsDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = LightsSerializer
     permission_classes = (IsAdminOrReadOnly,)
     lookup_url_kwarg = 'light_id'
+
+class LogLightsList(generics.ListCreateAPIView):
+    queryset = Log_lights.objects.all()
+    serializer_class = LogLightsSerializer
+    permission_classes = (IsAdminOrReadOnly,)
+    # lookup_url_kwarg = 'light_id'
+
+class LogThermostatList(generics.ListCreateAPIView):
+    queryset = Log_thermostat.objects.all()
+    serializer_class = LogThermostatSerializer
+    permission_classes = (IsAdminOrReadOnly,)
+
+class LogRoomTempList(generics.ListCreateAPIView):
+    queryset = Log_room_temp.objects.all()
+    serializer_class = LogRoomTempSerializer
+    permission_classes = (IsAdminOrReadOnly,)
