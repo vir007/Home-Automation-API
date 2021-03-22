@@ -20,3 +20,21 @@ class HomeDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = HomeSerializer
     permission_classes = (IsAdminOrReadOnly,)
     lookup_url_kwarg = 'home_id'
+
+# GET   : Retrive All Room Objects --Permission: Anyone
+# POST  : Create a new Room Object --Permission: OnlyAdmin
+class RoomList(generics.ListCreateAPIView):
+    queryset = Room.objects.all() #Post.postobjects.all()
+    serializer_class = RoomSerializer
+    permission_classes = (IsAdminOrReadOnly,)
+    lookup_url_kwarg = 'room_id'
+
+# GET   : Retrieve a Room Object --Permission: Anyone
+# PUT   : Update all fields of a Room Object --Permission: OnlyAdmin
+# PATCH : Update a perticular field of a Room Object --Permission: OnlyAdmin  
+# DELETE: Destroy a Room Object --Permission: OnlyAdmin
+class RoomDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Room.objects.all()
+    serializer_class = RoomSerializer
+    permission_classes = (IsAdminOrReadOnly,)
+    lookup_url_kwarg = 'room_id'
