@@ -18,7 +18,10 @@ Use freeze command to automatically generate a list of requirements.
 $ pip install django,djangorestframework,psycopg2,pytest,pytest-django
 $ pip list
 $ pip freeze > requirements.txt 
+```
+requirements.txt should have the following lines:
 
+```
 asgiref==3.3.1
 atomicwrites==1.4.0
 attrs==20.3.0
