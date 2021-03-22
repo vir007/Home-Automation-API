@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home',
     'home_api',
     'rest_framework',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -124,3 +125,19 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# Added Token Authentication
+# How to get a token:
+#   1. Make a POST request on: http://127.0.0.1:8000/api-token-auth/
+#   2. Attach in Body: username="yourusername" password="yourpassword"
+# How to use Token:
+#   1. with httpie: 'Authorization: Token 15a3c7c7cf1d47872abe7458ab9d66de99b1542f'
+#   2. with POSTMAN: 
+#       -> Step 1. Go To Header -> ADD key=Authorization , value=Token [your_token] ie. Token yourtoken1234
+#       -> Step 2. Make a request as standard method.
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+}

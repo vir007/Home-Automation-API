@@ -72,7 +72,7 @@ class HomeSerializer(serializers.ModelSerializer):
     
     def update(self, instance, validated_data):
         thermostate = validated_data.get('thermostat_mode', None)
-
+        
         if thermostate and thermostate != instance.thermostat_mode:
             Log_thermostat.objects.create(home=instance, oldVal=instance.thermostat_mode, newVal=thermostate)
 
