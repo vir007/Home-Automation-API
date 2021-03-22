@@ -1,6 +1,6 @@
 from django.urls import path
-# from .views import HomeList, HomeDetail,RoomDetail,RoomList,LightsDetail,LightsList
-from .views import HomeList, HomeDetail,RoomDetail,RoomList
+from .views import HomeList, HomeDetail,RoomDetail,RoomList,LightsDetail,LightsList
+
 
 app_name = 'home_api'
 
@@ -15,9 +15,9 @@ urlpatterns = [
     path('rooms/<int:room_id>/', RoomDetail.as_view(), name='room_detail_update'),
     path('<int:home_id>/<int:room_id>/', RoomDetail.as_view(), name='room_detail_update'),
     
-    # # Lights Routes
-    # path('lights', LightsList.as_view(), name='light_room_list_create'),
-    # path('lights/<int:light_id>/', LightsDetail.as_view(), name='light_room_detail_update'),
-    # path('<int:home_id>/<int:room_id>/<int:light_id>/', LightsDetail.as_view(), name='light_room_detail_update'),
+    # Lights Routes
+    path('lights', LightsList.as_view(), name='light_room_list_create'),
+    path('lights/<int:light_id>/', LightsDetail.as_view(), name='light_room_detail_update'),
+    path('<int:home_id>/<int:room_id>/<int:light_id>/', LightsDetail.as_view(), name='light_room_detail_update'),
     
 ]

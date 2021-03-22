@@ -38,3 +38,21 @@ class RoomDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = RoomSerializer
     permission_classes = (IsAdminOrReadOnly,)
     lookup_url_kwarg = 'room_id'
+
+# GET   : Retrive All Lights Objects --Permission: Anyone
+# POST  : Create a new Lights Object --Permission: OnlyAdmin
+class LightsList(generics.ListCreateAPIView):
+    queryset = Lights.objects.all() #Post.postobjects.all()
+    serializer_class = LightsSerializer
+    permission_classes = (IsAdminOrReadOnly,)
+    lookup_url_kwarg = 'light_id'
+
+# GET   : Retrieve a Lights Object --Permission: Anyone
+# PUT   : Update all fields of a Lights Object --Permission: OnlyAdmin
+# PATCH : Update a perticular field of a Lights Object --Permission: OnlyAdmin  
+# DELETE: Destroy a Lights Object --Permission: OnlyAdmin
+class LightsDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Lights.objects.all()
+    serializer_class = LightsSerializer
+    permission_classes = (IsAdminOrReadOnly,)
+    lookup_url_kwarg = 'light_id'
