@@ -87,7 +87,7 @@ toml==0.10.2
 uritemplate==3.0.1
 urllib3==1.26.4
 ```
-### API Documentation - Blog API
+### API Documentation - Rest Framework Documentation
 
 Use this route to get route description
 
