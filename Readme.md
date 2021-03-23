@@ -33,6 +33,23 @@ Now open a web browser and visit this route to check the API
 http://127.0.0.1:8000/
 ```
 
+### Token Authentication
+- This API is secured with a token authentication.
+- To generate a token
+    - Make a `POST` request to this route 
+    ```
+    api-token-auth/ username="your_admin_username" password="your_password"
+    ```
+    - Copy this Token and append at the end of a request.
+    ```
+    'Authorization: Token bc9514f0892368cfd0ea792a977aff55d53e3634'
+    ```
+    - If you are using a Postman, then add this in a header section.
+    ```
+    key = Authorization
+    value = Token bc9514f0892368cfd0ea792a977aff55d53e3634
+    ```
+
 ### Libraries
 
 These are the libraries that are used in this project.
