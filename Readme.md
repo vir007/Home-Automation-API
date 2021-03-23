@@ -50,7 +50,50 @@ sqlparse==0.4.1
 toml==0.10.2
 uritemplate==3.0.1
 urllib3==1.26.4
+```
+## API Documentation - Blog API
 
+Use this route to get route description
+
+```
+route: /docs/
+ie. http://127.0.0.1:8000/docs/
+```
+
+## Routes
+
+- This routes provides information related to different objects.
+- Anyone can retrieve th eobjects by sending `GET` request.
+- Only Admin can modify the objects by sending `POST`,`PUT`,`PATCH`
+and `DELETE` requests.
+
+```
+$ /api/
+- List all home objects including room and lights objects 
+
+$ /api/rooms
+- List all room objects including lights objects 
+
+$ /api/lights
+- List all lights objects
+
+$ /api/<home_id>/
+- Retrieve a perticular home object 
+
+$ /api/<home_id>/<room_id>/
+- Retrieve a perticular room object of a perticular home object
+
+$ /api/<home_id>/<room_id>/<light_id>/
+- Retrieve a perticular light object of a room object of a perticular home object
+
+$ /api/loglights
+- retrieve logs for changing a status of lights
+
+$ /api/logthermostat
+- retrieve logs for changing a mode of thermostat
+
+$ /api/logroomtemp
+- retrieve logs for changing a value of temperature of a room
 ```
 
 ## API Testing - pytest
@@ -80,17 +123,6 @@ tests/home_api/test_room_views.py::TestRoomDetailAdmin::test_only_admin_can_patc
 tests/home_api/test_room_views.py::TestRoomDetailAdmin::test_only_admin_can_update_a_room PASSED                                                             [100%]
 
 ======================================================================= 18 passed in 7.31s ========================================================================
-```
-
-
-## API Documentation - Blog API
-
-Use this route to get route description
-
-```
-route: /docs/
-ie. http://127.0.0.1:8000/docs/
-
 ```
 
 ## Fetures
