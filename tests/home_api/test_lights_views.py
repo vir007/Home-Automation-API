@@ -121,7 +121,7 @@ class TestLightsDetailAnonymous(APIAdminAPITestCase):
         self.assertEqual(response.status_code, status.HTTP_200_OK)
 
 
-class TestRoomDetailAdmin(APIAdminAPITestCase):
+class TestLightsDetailAdmin(APIAdminAPITestCase):
     @pytest.mark.django_db
     def test_only_admin_can_delete_a_light(self):
         url1 = reverse('home_api:home_list_create')
