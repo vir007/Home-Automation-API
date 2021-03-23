@@ -1,8 +1,8 @@
-### Home Automation using Python/Django 
+## Home Automation using Python/Django 
 
 Back end API for a Home Automation System built using Django REST Framework.
 
-## Getting Started
+### Getting Started
 
 Setup project environment with venv and pip.
 
