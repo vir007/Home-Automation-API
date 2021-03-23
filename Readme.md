@@ -87,13 +87,13 @@ $ /api/<home_id>/<room_id>/<light_id>/
 - Retrieve a perticular light object of a room object of a perticular home object
 
 $ /api/loglights
-- retrieve logs for changing a status of lights
+- Retrieve logs for changing a status of lights
 
 $ /api/logthermostat
-- retrieve logs for changing a mode of thermostat
+- Retrieve logs for changing a mode of thermostat
 
 $ /api/logroomtemp
-- retrieve logs for changing a value of temperature of a room
+- Retrieve logs for changing a value of temperature of a room
 ```
 
 ### API Testing - pytest
