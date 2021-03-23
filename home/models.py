@@ -108,7 +108,7 @@ class Log_thermostat(models.Model):
     created_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
+        return self.home.name
 
     class Meta:
         ordering = ('-created_on',)
@@ -133,7 +133,7 @@ class Log_lights(models.Model):
     created_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
+        return self.lights.name
 
     class Meta:
         ordering = ('-created_on',)
@@ -158,7 +158,7 @@ class Log_room_temp(models.Model):
     created_on = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.name
+        return self.room.name
 
     class Meta:
         ordering = ('-created_on',)
