@@ -58,7 +58,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [BASE_DIR/'templates'],
+        'DIRS': [BASE_DIR / 'templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -105,7 +105,7 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
- 
+
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
@@ -132,19 +132,18 @@ STATIC_URL = '/static/'
 #   2. Attach in Body: username="yourusername" password="yourpassword"
 # How to use Token:
 #   1. with httpie: 'Authorization: Token 15a3c7c7cf1d47872abe7458ab9d66de99b1542f'
-#   2. with POSTMAN: 
-#       -> Step 1. Go To Header -> ADD key=Authorization , value=Token [your_token] ie. Token yourtoken1234
+#   2. with POSTMAN:
+#       -> Step 1. Go To Header -> ADD key=Authorization , value=Token [your_token]
+#                  ie. Token yourtoken1234
 #       -> Step 2. Make a request as standard method.
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
     ),
-     'DEFAULT_PERMISSION_CLASSES': [
+    'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticatedOrReadOnly'
-    ]
-    ,
-    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' 
+    ],
+    'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema'
 }
 
-# REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
