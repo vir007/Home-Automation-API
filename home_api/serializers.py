@@ -4,25 +4,36 @@ from home.models import Log_thermostat, Log_lights, Log_room_temp
 
 
 class LogThermostatSerializer(serializers.ModelSerializer):
+    """
+    Serializer for logthermostate object's view 
+    """
     class Meta:
         model = Log_thermostat
         fields = ['home', 'oldVal', 'newVal', 'created_on']
 
 
 class LogRoomTempSerializer(serializers.ModelSerializer):
+    """
+    Serializer for logroomtemp object's view 
+    """
     class Meta:
         model = Log_room_temp
         fields = ['room', 'oldVal', 'newVal', 'created_on']
 
 
 class LogLightsSerializer(serializers.ModelSerializer):
+    """
+    Serializer for loglights object's view 
+    """
     class Meta:
         model = Log_lights
         fields = ['lights', 'oldVal', 'newVal', 'created_on']
 
 
-# Lights Serializer
 class LightsSerializer(serializers.ModelSerializer):
+    """
+    Serializer for lights object's view 
+    """
     id = serializers.IntegerField(required=False)
 
     def update(self, instance, validated_data):
@@ -46,8 +57,10 @@ class LightsSerializer(serializers.ModelSerializer):
         fields = ['id', 'name', 'status', 'room']
 
 
-# Room Serializer
 class RoomSerializer(serializers.ModelSerializer):
+    """
+    Serializer for room object's view 
+    """
     lights = LightsSerializer(many=True, default=[])
     id = serializers.IntegerField(required=False)
 
@@ -84,8 +97,10 @@ class RoomSerializer(serializers.ModelSerializer):
         return instance
 
 
-# Home Serializer
 class HomeSerializer(serializers.ModelSerializer):
+    """
+    Serializer for home object's view 
+    """
     room = RoomSerializer(many=True, default=[])
 
     class Meta:
@@ -126,4 +141,3 @@ class HomeSerializer(serializers.ModelSerializer):
             )
         instance.save()
         return instance
-        # return super(HomeSerializer, self).update(instance, validated_data)

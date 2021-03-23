@@ -37,7 +37,7 @@ urlpatterns = [
          name='light_room_detail_update'
          ),
 
-    # Log Tables Route
+    # Log Tables Routes
     path('loglights', LogLightsList.as_view(),
          name='log_light_list_create'
          ),
