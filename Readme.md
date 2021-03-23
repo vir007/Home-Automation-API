@@ -23,20 +23,34 @@ requirements.txt should have the following lines:
 asgiref==3.3.1
 atomicwrites==1.4.0
 attrs==20.3.0
+autopep8==1.5.6
+certifi==2020.12.5
+chardet==4.0.0
 colorama==0.4.4
+coreapi==2.3.3
+coreschema==0.0.4
 Django==3.1.7
 djangorestframework==3.12.2
+idna==2.10
 iniconfig==1.1.1
+itypes==1.2.0
+Jinja2==2.11.3
+MarkupSafe==1.1.1
 packaging==20.9
 pluggy==0.13.1
 psycopg2==2.8.6
 py==1.10.0
+pycodestyle==2.7.0
 pyparsing==2.4.7
 pytest==6.2.2
 pytest-django==4.1.0
 pytz==2021.1
+requests==2.25.1
 sqlparse==0.4.1
 toml==0.10.2
+uritemplate==3.0.1
+urllib3==1.26.4
+
 ```
 
 ## API Testing - pytest
