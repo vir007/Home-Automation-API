@@ -8,6 +8,6 @@ urlpatterns = [
     path('', include('home.urls', namespace='home')),
     path('api/', include('home_api.urls', namespace='home_api')),
     path('api-token-auth/', obtain_auth_token),
-    path('docs/', include_docs_urls(title='BlogAPI')),
+    path('docs/', include_docs_urls(title='HomeAutomationAPI')),
     path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
 ]
