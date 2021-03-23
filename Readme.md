@@ -10,8 +10,27 @@ Setup project environment with venv and pip.
 $ python -m venv venv
 $ venv/Scripts/activate
 $ pip install -r requirements.txt
+```
+Change settings.py/DATABASES according to your choice.
+I have used postgre database here.
+Setting for a Postgresql database is as below.
+```
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'your_database',
+        'USER': 'your_username',
+        'PASSWORD': 'your_password',
+        'HOST': 'localhost',
+    }
+```
+After Set-up the database setting, run the following commands.
+```
 $ python manage.py migrate
 $ python manage.py runserver
+```
+Now open a web browser and visit this route to check the API
+```
+http://127.0.0.1:8000/
 ```
 
 ### Libraries
