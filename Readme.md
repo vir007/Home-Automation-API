@@ -11,8 +11,8 @@ $ python -m venv venv
 $ venv/Scripts/activate
 $ pip install -r requirements.txt
 ```
-Change settings.py/DATABASES according to your choice.
-I have used postgre database here.
+Change settings.py/DATABASES according to your choice of database.
+I have used postgresql database here.
 Setting for a Postgresql database is as below.
 ```
     'default': {
