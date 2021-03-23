@@ -10,6 +10,9 @@ from .serializers import LogThermostatSerializer, LogRoomTempSerializer
 # GET   : Retrive All Home Objects --Permission: Anyone
 # POST  : Create new Home Object --Permission: OnlyAdmin
 class HomeList(generics.ListCreateAPIView):
+    """
+    This APIView automatically provides `list` and `create` actions.
+    """
     queryset = Home.objects.all()
     serializer_class = HomeSerializer
     permission_classes = (IsAdminOrReadOnly,)
@@ -23,6 +26,10 @@ class HomeList(generics.ListCreateAPIView):
 #       --Permission: OnlyAdmin
 # DELETE: Destroy a Home Object --Permission: OnlyAdmin
 class HomeDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    This APIView automatically provides `retrieve`,
+    `update` and `destroy` actions.
+    """
     queryset = Home.objects.all()
     serializer_class = HomeSerializer
     permission_classes = (IsAdminOrReadOnly,)
@@ -32,6 +39,9 @@ class HomeDetail(generics.RetrieveUpdateDestroyAPIView):
 # GET   : Retrive All Room Objects --Permission: Anyone
 # POST  : Create a new Room Object --Permission: OnlyAdmin
 class RoomList(generics.ListCreateAPIView):
+    """
+    This APIView automatically provides `list` and `create` actions.
+    """
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
     permission_classes = (IsAdminOrReadOnly,)
@@ -45,6 +55,10 @@ class RoomList(generics.ListCreateAPIView):
 #       --Permission: OnlyAdmin
 # DELETE: Destroy a Room Object --Permission: OnlyAdmin
 class RoomDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    This APIView automatically provides `retrieve`,
+    `update` and `destroy` actions.
+    """
     queryset = Room.objects.all()
     serializer_class = RoomSerializer
     permission_classes = (IsAdminOrReadOnly,)
@@ -54,6 +68,9 @@ class RoomDetail(generics.RetrieveUpdateDestroyAPIView):
 # GET   : Retrive All Lights Objects --Permission: Anyone
 # POST  : Create a new Lights Object --Permission: OnlyAdmin
 class LightsList(generics.ListCreateAPIView):
+    """
+    This APIView automatically provides `list` and `create` actions.
+    """
     queryset = Lights.objects.all()
     serializer_class = LightsSerializer
     permission_classes = (IsAdminOrReadOnly,)
@@ -67,6 +84,10 @@ class LightsList(generics.ListCreateAPIView):
 #       --Permission: OnlyAdmin
 # DELETE: Destroy a Lights Object --Permission: OnlyAdmin
 class LightsDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    This APIView automatically provides `retrieve`,
+    `update` and `destroy` actions.
+    """
     queryset = Lights.objects.all()
     serializer_class = LightsSerializer
     permission_classes = (IsAdminOrReadOnly,)
@@ -76,6 +97,9 @@ class LightsDetail(generics.RetrieveUpdateDestroyAPIView):
 # GET   : Retrieve Logs of Light status change Object
 #       --Permission: Anyone
 class LogLightsList(generics.ListCreateAPIView):
+    """
+    This APIView automatically provides `list` and `create` actions.
+    """
     queryset = Log_lights.objects.all()
     serializer_class = LogLightsSerializer
     permission_classes = (IsAdminOrReadOnly,)
@@ -84,6 +108,9 @@ class LogLightsList(generics.ListCreateAPIView):
 # GET   : Retrieve Logs of Thermostat mode change Object
 #       --Permission: Anyone
 class LogThermostatList(generics.ListCreateAPIView):
+    """
+    This APIView automatically provides `list` and `create` actions.
+    """
     queryset = Log_thermostat.objects.all()
     serializer_class = LogThermostatSerializer
     permission_classes = (IsAdminOrReadOnly,)
@@ -92,6 +119,9 @@ class LogThermostatList(generics.ListCreateAPIView):
 # GET   : Retrieve Logs of Room Temperature change Object
 #       --Permission: Anyone
 class LogRoomTempList(generics.ListCreateAPIView):
+    """
+    This APIView automatically provides `list` and `create` actions.
+    """
     queryset = Log_room_temp.objects.all()
     serializer_class = LogRoomTempSerializer
     permission_classes = (IsAdminOrReadOnly,)
