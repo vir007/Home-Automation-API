@@ -14,7 +14,7 @@ $ python manage.py migrate
 $ python manage.py runserver
 ```
 
-## Libraries
+### Libraries
 
 These are the libraries that are used in this project.
 requirements.txt should have the following lines:
@@ -51,7 +51,7 @@ toml==0.10.2
 uritemplate==3.0.1
 urllib3==1.26.4
 ```
-## API Documentation - Blog API
+### API Documentation - Blog API
 
 Use this route to get route description
 
@@ -60,7 +60,7 @@ route: /docs/
 ie. http://127.0.0.1:8000/docs/
 ```
 
-## Routes
+### Routes
 
 - This routes provides information related to different objects.
 - Anyone can retrieve th eobjects by sending `GET` request.
@@ -96,7 +96,7 @@ $ /api/logroomtemp
 - retrieve logs for changing a value of temperature of a room
 ```
 
-## API Testing - pytest
+### API Testing - pytest
 
 All Testcases are covered and tested using pytest library.
 Write this one line command to test the whole API.
@@ -125,12 +125,23 @@ tests/home_api/test_room_views.py::TestRoomDetailAdmin::test_only_admin_can_upda
 ======================================================================= 18 passed in 7.31s ========================================================================
 ```
 
-## Fetures
+### Fetures
 
 - API keep track of changes made on home, room or light object such as
 log entry for thermostat mode change, log entry for room temperature change,
 log entry for status change for room lights.
+- One endpoint to get all the data objects
 
-## Coding Convention
+### Coding Convention
 
 - Pep8 coding style
+
+### Future Modifications
+
+- Create Owner for the individual home objects and
+give additional permission to owners to modify the home objects. 
+- API optimization to achieve:
+    - Speed up in response times
+    - Number of lines of code
+    - Number of function calls
+    - Allocated memory
